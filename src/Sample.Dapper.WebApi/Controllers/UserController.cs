@@ -26,6 +26,11 @@ public class UserController : ControllerBase
         return Ok(result);
     }
 
+    /// <summary>
+    /// Gets the specified identifier.
+    /// </summary>
+    /// <param name="id">The identifier.</param>
+    /// <returns></returns>
     [HttpGet("Get")]
     public async Task<IActionResult> Get([FromQuery] int id)
     {
@@ -34,6 +39,14 @@ public class UserController : ControllerBase
     }
 
 
+    /// <summary>
+    /// Gets the list paged.
+    /// </summary>
+    /// <param name="pageNumber">The page number.</param>
+    /// <param name="rowPerPages">The row per pages.</param>
+    /// <param name="conditions">The conditions.</param>
+    /// <param name="orderby">The orderby.</param>
+    /// <returns></returns>
     [HttpGet("GetPaged")]
     public async Task<IActionResult> GetListPaged(int pageNumber, int rowPerPages, string conditions, string orderby)
     {
