@@ -8,9 +8,18 @@ using Serilog.Filters;
 namespace Sample.Dapper.WebApi.Core.Extensions;
 
 
+/// <summary>
+/// 
+/// </summary>
 public static class SerilogExtensions
 {
-	public static WebApplicationBuilder AddSerilog(this WebApplicationBuilder builder, string applicationName)
+    /// <summary>
+    /// Adds the serilog.
+    /// </summary>
+    /// <param name="builder">The builder.</param>
+    /// <param name="applicationName">Name of the application.</param>
+    /// <returns></returns>
+    public static WebApplicationBuilder AddSerilog(this WebApplicationBuilder builder, string applicationName)
 	{
 		Log.Logger = new LoggerConfiguration()
 			.MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Information)
