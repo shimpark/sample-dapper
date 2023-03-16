@@ -14,6 +14,11 @@ public class UserController : ControllerBase
         _repository = repository;
     }
 
+    /// <summary>
+    /// Posts the specified user.
+    /// </summary>
+    /// <param name="user">The user.</param>
+    /// <returns></returns>
     [HttpPost("Add")]
     public async Task<IActionResult> Post([FromBody] User user)
     {
