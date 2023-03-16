@@ -9,6 +9,13 @@ namespace Sample.Dapper.WebApi.Core.Extensions;
 
 public class MigrationManager : IStartupFilter
 {
+    /// <summary>
+    /// Extends the provided <paramref name="next" /> and returns an <see cref="T:System.Action" /> of the same type.
+    /// </summary>
+    /// <param name="next">The Configure method to extend.</param>
+    /// <returns>
+    /// A modified <see cref="T:System.Action" />.
+    /// </returns>
     public Action<IApplicationBuilder> Configure(Action<IApplicationBuilder> next)
     {
         return app =>
@@ -28,6 +35,10 @@ public class DatabaseExtensions
     {
         _configuration = configuration;
     }
+    /// <summary>
+    /// Creates the database.
+    /// </summary>
+    /// <param name="dbName">Name of the database.</param>
     public void CreateDatabase(string dbName)
     {
         var query = "SELECT * FROM sys.databases WHERE name = @name";
