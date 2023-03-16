@@ -54,6 +54,11 @@ public class UserController : ControllerBase
         return Ok(list);
     }
 
+    /// <summary>
+    /// Deletes the specified identifier.
+    /// </summary>
+    /// <param name="id">The identifier.</param>
+    /// <returns></returns>
     [HttpDelete("Delete")]
     public async Task<IActionResult> Delete([FromQuery] int id)
     {
